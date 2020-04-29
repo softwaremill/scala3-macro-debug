@@ -1,6 +1,6 @@
 package com.softwaremill.debug
 
-object Debug {
+object Debug:
   import scala.quoted._
 
   inline def hello(): Unit = println("Hello, world!")
@@ -9,9 +9,8 @@ object Debug {
   
   inline def debugSingle(inline expr: Any): Unit = ${debugSingleImpl('expr)} 
   
-  private def debugSingleImpl(expr: Expr[Any])(using QuoteContext): Expr[Unit] = '{
-    println(s"Value of ${${Expr(expr.show)}} is ${$expr}")
-  }
+  private def debugSingleImpl(expr: Expr[Any])(using QuoteContext): Expr[Unit] = 
+    '{ println("Value of " + ${Expr(expr.show)} + " is " + $expr) }
   
   // --
 
@@ -30,4 +29,4 @@ object Debug {
   
     val concatenatedStringsExp = stringExps.reduceOption((e1, e2) => '{$e1 + ", " + $e2}).getOrElse('{""})
     '{println($concatenatedStringsExp)}
-}
+

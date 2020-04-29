@@ -1,11 +1,13 @@
 package com.softwaremill.debug
 
-object Main extends App:
+object Test extends App:
+  import Debug._
+
+  hello()
+
   val z = 2
 
   def test =
-    Debug.hello()
-
     val x = 0
     val y = 1
 
