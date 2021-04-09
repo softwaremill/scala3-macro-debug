@@ -1,6 +1,6 @@
-lazy val commonSettings = commonSmlBuildSettings ++ ossPublishSettings ++ Seq(
+lazy val commonSettings = commonSmlBuildSettings ++ Seq(
   organization := "com.softwaremill.debug",
-  scalaVersion := "0.24.0-RC1"
+  scalaVersion := "3.0.0-RC2"
 )
 
 lazy val rootProject = (project in file("."))
@@ -11,4 +11,3 @@ lazy val rootProject = (project in file("."))
 lazy val core: Project = (project in file("core"))
   .settings(commonSettings: _*)
   .settings(name := "core")
-
