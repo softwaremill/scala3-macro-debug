@@ -1,6 +1,6 @@
 lazy val commonSettings = commonSmlBuildSettings ++ Seq(
   organization := "com.softwaremill.debug",
-  scalaVersion := "3.0.0-RC2"
+  scalaVersion := "3.0.0"
 )
 
 lazy val rootProject = (project in file("."))
